@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS style -->
+    <link rel="stylesheet" href="~/css/main.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>@ViewData["Title"] - Moment 1.2</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Logotype</h1>
+        <div class="date">Dagens datum: @DateTime.Now.ToString("yyyy-MM-dd")</div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <nav>
+                <h2 class="menu-toggle">Meny <i class="fas fa-arrow-circle-down"></i></h2>
+                <ul>
+                    <li><a asp-area="" asp-page="/Index">Startsida</a></li>
+                    <li><a asp-area="" asp-page="/Razor">Razor</a></li>
+                    <li><a asp-area="" asp-page="/About">Om</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Content -->
+        <div class="main">
+            @RenderBody()
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; @DateTime.Now.Year - Moment 1.2
+        </p>
+        <p>
+            Av Mathilda Edström - Kontakta mig via e-post: <a href="mailto:maed1801@student.miun.se">maed1801@student.miun.se</a>
+        </p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <!--<script src="~/lib/jquery/dist/jquery.min.js"></script>-->
+    <script src="~/js/main.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

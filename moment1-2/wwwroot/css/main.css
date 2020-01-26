@@ -1,0 +1,172 @@
+/*
+    0. Everything
+    1. Body
+    2. Header
+    3. Container
+        3.1 Sidebar
+        3.2 Main
+    4. Footer
+    5. Media queries
+*/
+
+/*
+    - Color scheme:
+    Pink: #cca4a6
+    Light: #f7f7f7
+    Lightgreen: #647973
+    Darkgreen: #314247
+*/
+
+/* 0. Everything */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Links */
+a {
+    color: #647973;
+    text-decoration: none;
+}
+a:hover {
+    color: #cca4a6;
+    transition: all 0.2s;
+}
+
+/* Lists */
+ul,
+ol {
+    list-style-position: inside;
+}
+
+/* Images */
+img {
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 2px 2px 7px #666;
+    margin-bottom: 10px;
+}
+
+/* Text */
+p {
+    max-width: 550px;
+}
+
+/* 1. Body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 2. Header */
+header {
+    display: flex;
+    padding: 20px;
+    background: #cca4a6;
+    color: #314247;
+}
+
+/* Header date */
+.date {
+    margin-left: auto;
+}
+
+/* 3. Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+/* 3.1 Sidebar */
+.sidebar {
+    width: 25%;
+    padding: 10px;
+    border-right: 10px solid #647973;
+    background: #647973;
+}
+
+/* Menu toggle */
+.menu-toggle {
+    display: none;
+    color: #f7f7f7;
+}
+
+.menu-toggle i {
+    margin-left: auto;
+}
+
+/* Sidebar list */
+.sidebar ul {
+    list-style: none;
+}
+
+/* Sidebar list items link */
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    color: #314247;
+}
+.sidebar ul li a:hover {
+    background: #314247;
+    color: #cca4a6;
+}
+
+/* 3.2 Main */
+.main {
+    width: 75%;
+    padding: 30px;
+    background: #f7f7f7;
+    flex: 1;
+}
+.main h1,
+.main h2,
+.main h3,
+.main p,
+.main ul,
+.main li {
+    padding-bottom: 10px;
+}
+
+/* 4. Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 10px solid #647973;
+    background: #314247;
+    color: #f7f7f7;
+}
+footer p {
+    margin: 0 auto;
+}
+
+
+/* 5. Media queries - Responsive layout */
+@media screen and (max-width: 700px) {
+    /* Change flex direction */
+    .container {
+        flex-direction: column;
+    }
+    /* Width 100% for flex items */
+    .sidebar,
+    .main {
+        width: 100%;
+    }
+
+    /* Menu toggle */
+    .menu-toggle {
+        display: flex;
+        padding: 0px 10px;
+    }
+
+    /* Sidebar list */
+    .sidebar ul {
+        display: none;
+        padding: 10px 0;
+        border-top: 1px solid #314247;
+        margin-top: 10px;
+    }
+}
